@@ -1,0 +1,8 @@
+.DS_Store
+bot.log
+data/
+import logging.py
+requirements.txt
+setting.py
+venv/
+voice.py
