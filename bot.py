@@ -1,4 +1,5 @@
 import logging
+
 from telegram import Update
 from telegram.ext import (
     Updater,
@@ -15,11 +16,10 @@ from voice import text_to_file
 
 TOKEN = setting.API_KEY
 
-print('RUN')
+print(' Bot RUNING')
 
 def hello(update,context):
     update.message.reply_text(f'Hello {update.effective_user.first_name}')
-
 
 def help_handler(update, context):
     help_text = """Для того,чтобы преобразовать текст в аудиосообщение -  используйте наш бот.Пришлите любой текст обычным сообщением и он превратится в аудио сообщение!"""
@@ -32,10 +32,11 @@ def reply(update, context):
     
 updater = Updater(TOKEN)
 
-dt = updater.dispatcher
-dt.add_handler(CommandHandler("hello", hello))
-dt.add_handler(CommandHandler("help", help_handler))
-dt.add_handler(MessageHandler(Filters.text & ~Filters.command, reply))
+ud = updater.dispatcher
+
+ud.add_handler(CommandHandler("hello", hello))
+ud.add_handler(CommandHandler("help", help_handler))
+ud.add_handler(MessageHandler(Filters.text & ~Filters.command, reply))
 logging.info("Bot is started")
 updater.start_polling()
 updater.idle()
