@@ -1,3 +1,4 @@
+# 
 import logging
 
 from telegram import Update
@@ -10,6 +11,8 @@ from telegram.ext import (
 )
 import setting
 
+# Логи предоставляют разработчикам дополнительный набор глаз, 
+# которые постоянно смотрят на поток, через который проходит приложение.
 logging.basicConfig(filename = "bot.log" ,level = logging.INFO)
 
 from voice import text_to_file
