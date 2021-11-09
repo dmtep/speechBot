@@ -5,7 +5,7 @@ import logging.py
 requirements.txt
 setting.py
 venv/
-voice.py
+
 *.mp3
 *.ogg
 
