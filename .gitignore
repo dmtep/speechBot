@@ -2,7 +2,7 @@
 bot.log
 data/
 import logging.py
-requirements.txt
+
 setting.py
 venv/
 
