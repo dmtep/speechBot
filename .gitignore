@@ -3,7 +3,6 @@ bot.log
 data/
 import logging.py
 
-setting.py
 venv/
 
 *.mp3
