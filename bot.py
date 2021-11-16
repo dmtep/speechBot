@@ -13,25 +13,25 @@ import setting
 
 # Логи предоставляют разработчикам дополнительный набор глаз, 
 # которые постоянно смотрят на поток, через который проходит приложение.
-logging.basicConfig(filename = "bot.log" ,level = logging.INFO)
+logging.basicConfig(filename = "bot.log", level = logging.INFO)
 
 from voice import text_to_file
 
 TOKEN = setting.API_KEY
 
-print(' Bot RUNING')
+print('Bot RUNING')
 
 def hello(update,context):
     update.message.reply_text(f'Hello {update.effective_user.first_name}')
 
 def help_handler(update, context):
-    help_text = """Для того,чтобы преобразовать текст в аудиосообщение -  используйте наш бот.Пришлите любой текст обычным сообщением и он превратится в аудио сообщение!"""
+    help_text = """Для того, чтобы преобразовать текст в аудиосообщение - используйте наш Бот.Пришлите любой текст обычным сообщением и он превратится в аудио сообщение!"""
     update.message.reply_text(help_text)
 
 def reply(update, context):
     file_name = text_to_file(update.message.text)
     # update.message.reply_text("Проговорим текст: " +update.message.text)
-    update.message.reply_voice(voice=open(file_name, "rb"))
+    update.message.reply_voice(voice = open(file_name, "rb"))
     
 updater = Updater(TOKEN)
 
